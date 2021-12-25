@@ -1,0 +1,3 @@
+#------------------------- Compatability Functions -------------------------
+
+TimeGetFormat = Time.GetTimeFormat;

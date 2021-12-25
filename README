@@ -1,3 +1,16 @@
+This is a fork from https://gitlab.freedesktop.org/plymouth/plymouth
+that adds support for getting system time as a formatted string
+
+usage:
+  Time.GetTimeFormat("Format");
+
+where Format is the format part from c library function strftime() https://man7.org/linux/man-pages/man3/strftime.3.html
+
+note:
+to have timezones work properly in the boot process it is required to add the timezone to initramfs.
+
+
+
 plymouth - graphical boot animation and logger
 
 Plymouth is an application that runs very early in the boot process

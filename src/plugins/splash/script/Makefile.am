@@ -47,6 +47,9 @@ script_la_SOURCES = $(srcdir)/plugin.c                                        \
                     $(srcdir)/script-lib-math.c                               \
                     $(srcdir)/script-lib-math.h                               \
                     $(srcdir)/script-lib-math.script                          \
+                    $(srcdir)/script-lib-time.c                               \
+                    $(srcdir)/script-lib-time.h                               \
+                    $(srcdir)/script-lib-time.script                          \
                     $(srcdir)/script-lib-string.c                             \
                     $(srcdir)/script-lib-string.h                             \
                     $(srcdir)/script-lib-string.script
@@ -58,6 +61,7 @@ BUILT_SOURCES = script-lib-image.script.h                                     \
                 script-lib-sprite.script.h                                    \
                 script-lib-plymouth.script.h                                  \
                 script-lib-math.script.h                                      \
+                script-lib-time.script.h                                      \
                 script-lib-string.script.h
 
 %.script.h: %.script

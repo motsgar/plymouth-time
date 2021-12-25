@@ -61,6 +61,7 @@
 #include "script-lib-sprite.h"
 #include "script-lib-plymouth.h"
 #include "script-lib-math.h"
+#include "script-lib-time.h"
 #include "script-lib-string.h"
 
 #include <linux/kd.h>
@@ -87,6 +88,7 @@ struct _ply_boot_splash_plugin
         script_lib_image_data_t    *script_image_lib;
         script_lib_plymouth_data_t *script_plymouth_lib;
         script_lib_math_data_t     *script_math_lib;
+        script_lib_time_data_t     *script_time_lib;
         script_lib_string_data_t   *script_string_lib;
 
         uint32_t                    is_animating : 1;
@@ -275,6 +277,7 @@ start_script_animation (ply_boot_splash_plugin_t *plugin)
                                                                  plugin->mode,
                                                                  FRAMES_PER_SECOND);
         plugin->script_math_lib = script_lib_math_setup (plugin->script_state);
+        plugin->script_time_lib = script_lib_time_setup (plugin->script_state);
         plugin->script_string_lib = script_lib_string_setup (plugin->script_state);
 
         ply_trace ("executing script file");
@@ -333,6 +336,7 @@ stop_script_animation (ply_boot_splash_plugin_t *plugin)
         script_lib_image_destroy (plugin->script_image_lib);
         script_lib_plymouth_destroy (plugin->script_plymouth_lib);
         script_lib_math_destroy (plugin->script_math_lib);
+        script_lib_time_destroy (plugin->script_time_lib);
         script_lib_string_destroy (plugin->script_string_lib);
 }
 
